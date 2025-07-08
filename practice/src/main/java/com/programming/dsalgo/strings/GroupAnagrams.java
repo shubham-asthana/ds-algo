@@ -31,7 +31,7 @@ public class GroupAnagrams {
                 count[c - 'a']++;
             }
             String sortedString = Arrays.toString(count);
-            System.out.println(count);
+            System.out.println(sortedString);
             anagramGroups.putIfAbsent(sortedString, new ArrayList<>());
             anagramGroups.get(sortedString).add(str);
         }

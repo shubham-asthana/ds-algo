@@ -9,6 +9,8 @@ public class ReverseWords {
     private static String reverseWords(String s) {
         if (s.length() <= 1)
             return s;
+
+        System.out.println(s);
         String[] strArr = s.replaceAll("\\s+", " ").trim().split(" ");
         int i = 0, j = strArr.length - 1;
         while (i < j) {
