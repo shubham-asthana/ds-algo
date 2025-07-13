@@ -21,7 +21,7 @@ public class InsertInterval {
         }
         List<int[]> res = new ArrayList<>();
         for (int[] interval : intervals) {
-            if (interval[1] < newInterval[0]) {
+            if (null == newInterval || interval[1] < newInterval[0]) {
                 res.add(interval);
             } else if (newInterval[1] < interval[0]) {
                 res.add(newInterval);
