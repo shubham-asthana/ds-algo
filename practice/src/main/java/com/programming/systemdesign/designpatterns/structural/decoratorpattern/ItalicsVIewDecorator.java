@@ -1,8 +1,8 @@
 package com.programming.systemdesign.designpatterns.structural.decoratorpattern;
 
-public class ItalicsVIewDecorator extends TextDecorator {
+public class ItalicsViewDecorator extends TextDecorator {
 
-    public ItalicsVIewDecorator(TextView textView) {
+    public ItalicsViewDecorator(TextView textView) {
         super(textView);
     }
 

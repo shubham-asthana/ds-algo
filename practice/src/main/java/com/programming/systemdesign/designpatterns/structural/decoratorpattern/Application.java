@@ -15,7 +15,7 @@ public class Application {
 
         System.out.println();
         System.out.print("Bold + Italics Text View: ");
-        TextDecorator italicsViewDecorator = new ItalicsVIewDecorator(boldViewDecorator);
+        TextDecorator italicsViewDecorator = new ItalicsViewDecorator(boldViewDecorator);
         italicsViewDecorator.render();
 
         System.out.println();
