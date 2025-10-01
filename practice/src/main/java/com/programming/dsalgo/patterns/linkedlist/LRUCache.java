@@ -57,6 +57,29 @@ public class LRUCache<K, V> {
         }
     }
 
+    public boolean isEmpty() {
+        return cache.isEmpty();
+    }
+
+    // Return evicted key (used by LFU)
+    public K evictOne() {
+        if (cache.isEmpty())
+            return null;
+        Node toRemove = tail.prev;
+        remove(toRemove);
+        cache.remove(toRemove.key);
+        return toRemove.key;
+    }
+
+    // Allow LFU to explicitly remove key
+    public void remove(K key) {
+        Node node = cache.get(key);
+        if (node != null) {
+            remove(node);
+            cache.remove(key);
+        }
+    }
+
     private void moveToHead(Node node) {
         remove(node);
         insertToHead(node);
