@@ -48,13 +48,14 @@ public class MaximumSubarraySum {
     // If sum > 0, we need to carry it forward as it is a positive sum.
     // The reason for doing this is that till sum > 0, however small, it can do a
     // value addition and maximise the chances of getting a larger sum.
+    // T.C = O(N), S.C = O(1)
     private static int maxSubarraySum3(int[] arr) {
         int maxSum = Integer.MIN_VALUE, sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (sum < 0)
-                sum = 0;
             sum += arr[i];
             maxSum = Math.max(maxSum, sum);
+            if (sum < 0)
+                sum = 0;
         }
         return maxSum;
     }
